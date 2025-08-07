@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Silence Payments",
+  "version": "1.0",
+  "description": "Pay sats for comments, earn sats for silence",
+  "permissions": [
+    "storage",
+    "alarms",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://github.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}

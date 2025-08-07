@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+		body {
+			width: 300px;
+			padding: 15px;
+			font-family: 'Comic Neue', 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', cursive, sans-serif;
+		}
+
+		.wallet-info {
+			background: #f0f0f0;
+			padding: 15px;
+			border-radius: 8px;
+			margin-bottom: 15px;
+		}
+
+		.balance {
+			font-size: 24px;
+			font-weight: 700;
+			color: #f7931a;
+			margin: 10px 0;
+		}
+
+		h2 {
+			font-weight: 700;
+			text-align: center;
+			margin-bottom: 20px;
+			color: #333;
+		}
+
+		h3 {
+			font-weight: 700;
+			color: #555;
+		}
+
+		.stats {
+			margin: 15px 0;
+		}
+
+		.stat-item {
+			display: flex;
+			justify-content: space-between;
+			margin: 8px 0;
+			padding: 8px;
+			background: #f9f9f9;
+			border-radius: 4px;
+		}
+
+		.positive {
+			color: #22c55e;
+		}
+
+		.negative {
+			color: #ef4444;
+		}
+
+		button {
+			width: 100%;
+			padding: 10px;
+			background: #f7931a;
+			color: white;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		button:hover {
+			background: #e8821a;
+		}
+
+		.timer {
+			text-align: center;
+			font-size: 18px;
+			font-weight: 700;
+			margin: 10px 0;
+			color: #22c55e;
+			background: #f0f9ff;
+			padding: 10px;
+			border-radius: 8px;
+			border: 2px dashed #22c55e;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>&#129323; Silence Payments</h2>
+
+	<div class="wallet-info">
+		<div>Lightning Balance:</div>
+		<div class="balance" id="balance">21,000 sats</div>
+	</div>
+
+	<div class="timer">
+		Silent for: <span id="timer">0:00</span>
+	</div>
+
+	<div class="stats">
+		<h3>Today's Activity</h3>
+		<div class="stat-item">
+			<span>Comments made:</span>
+			<span class="negative" id="comments">0</span>
+		</div>
+		<div class="stat-item">
+			<span>Sats spent:</span>
+			<span class="negative" id="spent">0 sats</span>
+		</div>
+		<div class="stat-item">
+			<span>Sats earned:</span>
+			<span class="positive" id="earned">0 sats</span>
+		</div>
+		<div class="stat-item">
+			<span>Silence streak:</span>
+			<span id="streak">0 sec</span>
+		</div>
+	</div>
+
+	<script src="popup.js"></script>
+</body>
+
+</html>
